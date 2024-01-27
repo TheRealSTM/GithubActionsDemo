@@ -1,0 +1,13 @@
+name: Issue Workflow Creation Demo
+run-name: A new issue has been created by ${{ github.actor }}!
+on:
+  issues:
+    types: [opened]
+jobs:
+  Issue-Creation-Workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
+          echo "Issue URL: ${{ github.event.issue.html_url }}"

@@ -11,3 +11,4 @@ jobs:
           echo "Issue Title: ${{ github.event.issue.title }}"
           echo "Issue Body: ${{ github.event.issue.body }}"
           echo "Issue URL: ${{ github.event.issue.html_url }}"
+      - run: echo "🍏 This job's status is ${{ job.status }}."

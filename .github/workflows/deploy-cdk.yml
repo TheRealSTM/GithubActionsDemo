@@ -13,6 +13,30 @@ jobs:
               with:
                 node-version: '20'
             
+            - name: Check AWS_ACCESS_KEY_ID
+              run: |
+                  if [ -z "${{ secrets.AWS_ACCESS_KEY_ID }}" ]; then
+                    echo "AWS_ACCESS_KEY_ID is not set."
+                  else
+                    echo "AWS_ACCESS_KEY_ID is set."
+                  fi
+        
+            - name: Check AWS_SECRET_ACCESS_KEY
+              run: |
+                  if [ -z "${{ secrets.AWS_SECRET_ACCESS_KEY }}" ]; then
+                    echo "AWS_SECRET_ACCESS_KEY is not set."
+                  else
+                    echo "AWS_SECRET_ACCESS_KEY is set."
+                  fi
+        
+            - name: Check AWS_DEFAULT_REGION
+              run: |
+                  if [ -z "${{ secrets.AWS_DEFAULT_REGION }}" ]; then
+                    echo "AWS_DEFAULT_REGION is not set."
+                  else
+                    echo "AWS_DEFAULT_REGION is set."
+                  fi
+            
             - name: Install AWS CDK CLI
               run: npm install -g aws-cdk
             

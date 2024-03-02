@@ -19,7 +19,6 @@ jobs:
             - name: Check AWS CLI and CDK versions
               run: |
                 aws --version
-                cdk --version
 
             - name: Test AWS Credentials
               run: aws s3 ls

@@ -4,6 +4,7 @@ on: [push]
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        environment: AWS Demo Environment
         steps:
             - name: Checkout repository
               uses: actions/checkout@v2
